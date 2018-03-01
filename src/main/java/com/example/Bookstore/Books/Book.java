@@ -1,11 +1,21 @@
 package com.example.Bookstore.Books;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Book {
+	@Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+	private Long id;
 	private String title;
 	private String author;
 	private int year;
 	private String isbn;
 	private double price;
+	
 	
 	public Book(String title, String author, int year, String isbn, double price) {
 		super();
@@ -23,6 +33,10 @@ public class Book {
 		this.year = -1;
 		this.isbn = null;
 		this.price = 0;
+	}
+	
+	public Long getId() {
+		return id;
 	}
 
 	public String getTitle() {
