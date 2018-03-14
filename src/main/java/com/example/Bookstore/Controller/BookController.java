@@ -20,7 +20,13 @@ import com.example.Bookstore.Books.BookRepository;
 public class BookController {	
 	
 	@Autowired
-	private BookRepository repository; 
+	private BookRepository repository;
+	
+	// Show all students
+    @RequestMapping(value="/login")
+    public String login() {	
+        return "login";
+    }
 	
 	@RequestMapping("/index")
 	public String home() {
